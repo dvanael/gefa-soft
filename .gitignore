@@ -1,0 +1,11 @@
+# Enviroment
+.venv
+venv
+# Python, Djago
+__pycache__
+media
+*.sqlite3
+.env
+env
+# IDE
+.vscode
