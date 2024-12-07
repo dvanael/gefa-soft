@@ -1,3 +1,5 @@
 from django.contrib import admin
+from app.insumos.models import TipoInsumo, Insumo
 
-# Register your models here.
+admin.site.register(TipoInsumo)
+admin.site.register(Insumo)
