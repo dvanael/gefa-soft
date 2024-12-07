@@ -32,7 +32,13 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = []
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    'app.insumos',
+    'app.users',
+    'app.produtos',
+    'app.despesas',
+    'app.funcionarios',
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
