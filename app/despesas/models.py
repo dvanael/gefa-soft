@@ -6,7 +6,7 @@ class GastoInsumo(models.Model):
     quantidade = models.DecimalField(max_digits=5, decimal_places=2, verbose_name='Quantidade')
 
     def __str__(self):
-        return f'Gasto com {self.insumo} - Qntd. {self.quantidade} - Total: R${self.total}'
+        return f'{self.insumo} - Qntd. {self.quantidade} - Total: R${self.total}'
 
     @property
     def total(self):
