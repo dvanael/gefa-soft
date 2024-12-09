@@ -1,6 +1,6 @@
 from django import forms
 from decimal import Decimal, InvalidOperation
-from app.insumos.models import TipoInsumo, Insumo
+from app.insumos.models import Insumo
 
 class InsumoForm(forms.ModelForm):
     preco = forms.CharField(label='Preço')
@@ -10,8 +10,6 @@ class InsumoForm(forms.ModelForm):
             field.widget.attrs.update({'class': 'form-control'})
         self.fields['preco'].widget.attrs.update({'class': 'form-control price'})
             
-
-    
     class Meta:
         model = Insumo
         fields = '__all__'
@@ -23,6 +21,3 @@ class InsumoForm(forms.ModelForm):
             return Decimal(data)
         except InvalidOperation:
             raise forms.ValidationError("O preço deve ser um número válido.") 
-
-            
-        

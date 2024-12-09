@@ -4,14 +4,6 @@ from django.urls import reverse_lazy
 from app.insumos.models import Insumo
 from app.insumos.forms import InsumoForm
 
-
-# def list_insumos(request):
-#     template_name = 'insumos/list.html'
-#     context = {
-#         'insumos': Insumo.objects.all()
-#     }
-#     return render(request, template_name, context)
-
 class InsumoListView(ListView):
     model = Insumo
     template_name = 'insumos/list.html'
