@@ -7,9 +7,11 @@
       <a href="{% url 'list-insumos' %}">Insumos</a>
     </li>
     <li>
+      <a href="{% url 'list-gasto-insumo' %}">Gastos de Insumos</a>
+    </li>
+    <li>
       <a href="{% url 'list-funcionarios' %}">Funcionários</a>
     </li>
-
     {% if request.user.is_authendicated %}
       <li>
         <form action="{% url 'logout' %}" method="post">
