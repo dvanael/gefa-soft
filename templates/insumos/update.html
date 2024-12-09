@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <h1>Atualizar insumo {{ object }}</h1>
+        <form action="{% url 'update-insumo' object.pk %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Atualizar</button>
+            <a href="{% url 'list-insumos' %}" class="btn btn-danger">Cancelar</a>
+        </form>
+    </div>
+{% endblock content %}

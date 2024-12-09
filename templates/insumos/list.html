@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div>
+      <a href="{% url 'index' %}">Início</a>
+      <a href="{% url 'create-insumo' %}" class="btn btn-primary">Cadastrar insumo</a>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Insumo</th>
+          <th scope="col">Preço unitário</th>
+          <th scope="col">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for insumo in insumos %}
+          <tr>
+            <th>{{ insumo.pk }}</th>
+            <td>{{ insumo.tipo }}</td>
+            <td>{{ insumo.preco }}</td>
+            <td>
+              <a href="{% url 'update-insumo' insumo.pk %}">Atualizar</a>
+              <a href="{% url 'delete-insumo' insumo.pk %}">Deletar</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
