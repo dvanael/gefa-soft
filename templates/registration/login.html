@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock title %}
+{% block navbar %}{% endblock %}
+{% block content %}
+<div class="login-title">
+  <h1>GEFA SOFT - Login</h1>
+</div>
+<div class="login-form">
+  <form action="{% url "login" %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Entrar</button>
+  </form>
+</div>
+{% endblock content %}
