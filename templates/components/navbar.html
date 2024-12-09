@@ -1,0 +1,25 @@
+<nav>
+  <ul>
+    <li>
+      <a href="{% url 'index' %}">Inicio</a>
+    </li>
+    <li>
+      <a href="{% url 'list-insumos' %}">Insumos</a>
+    </li>
+
+    {% if request.user.is_authendicated %}
+      <li>
+        <form action="{% url 'logout' %}" method="post">
+          <button type="submit" href="{% url 'logout' %}">Sair</button>
+        </form>
+      </li>
+    {% else %}
+      <li>
+        <span>Olá, {{request.user}}</span>
+      </li>
+      <li>
+        <a href="{% url 'login' %}">Entrar</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
