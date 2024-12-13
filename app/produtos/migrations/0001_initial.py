@@ -12,15 +12,16 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Insumo',
+            name='Produto',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('tipo', models.CharField(max_length=45, verbose_name='Tipo do Insumo')),
-                ('preco', models.DecimalField(decimal_places=2, max_digits=5, verbose_name='Preço Unitário')),
+                ('nome', models.CharField(max_length=100, verbose_name='Nome')),
+                ('unidade', models.CharField(choices=[('Kg', 'Kg'), ('Un', 'Un')], max_length=100, verbose_name='Unidade')),
+                ('preco', models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Preco')),
             ],
             options={
-                'verbose_name': 'Insumo',
-                'verbose_name_plural': 'Insumos',
+                'verbose_name': 'Produto',
+                'verbose_name_plural': 'Produtos',
             },
         ),
     ]
