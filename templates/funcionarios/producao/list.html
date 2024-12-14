@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
-
+{% block title %}Produção{% endblock title %}
 {% block content %}
   <div class="container">
     <h1>Produções de {{ funcionario.nome }}</h1>
     <div>
       <a href="{% url 'create-producao' funcionario.pk %}" class="btn btn-primary">Cadastrar Produção</a>
+      <a href="{% url 'lsit-funcionarios' %}" class="btn btn-primary">Ver Lista de Funcionários</a>
     </div>
     <table class="table table-striped">
       <thead>
