@@ -29,19 +29,19 @@ urlpatterns = [
         name="update-funcionario",
     ),
     # PRODUÇÃO
-    path("funcionarios/<int:pk>/produções/", list_producao, name="list-producao"),
+    path("funcionarios/<int:pk>/producoes/", list_producao, name="list-producao"),
     path(
-        "funcionarios/<int:pk>/produções/cadastrar/",
+        "funcionarios/<int:pk>/producoes/cadastrar/",
         create_producao,
         name="create-producao",
     ),
     path(
-        "funcionarios/<int:pk>/produções/<int:producao_pk>/atualizar/",
+        "funcionarios/<int:pk>/producoes/<int:producao_pk>/atualizar/",
         update_producao,
         name="update-producao",
     ),
     path(
-        "funcionarios/<int:pk>/produções/<int:producao_pk>/deletar/",
+        "funcionarios/<int:pk>/producoes/<int:producao_pk>/deletar/",
         delete_producao,
         name="delete-producao",
     ),
