@@ -21,7 +21,7 @@
         {% for prod in producoes %}
           <tr>
             <th>{{ prod.produto.nome }} ({{ prod.produto.unidade }})</th>
-            <td>{{ prod.quantidade }}</td>
+            <td>{{ prod.quantidade }} ({{ prod.produto.unidade }})</td>
             <td>{{ prod.data|date:"SHORT_DATE_FORMAT" }}</td>
             <td>{{ prod.saldo }}</td>
             <td>

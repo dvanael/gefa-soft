@@ -22,7 +22,7 @@
             <td>{{ fun.funcao }}</td>
             <td>
               <a href="{% url 'list-producao' fun.pk %}" class="btn btn-success">Ver Produções</a>
-              <a href="{% url 'list-producao' fun.pk %}" class="btn btn-success">Cadastrar Produção</a>
+              <a href="{% url 'create-producao' fun.pk %}" class="btn btn-success">Cadastrar Produção</a>
               <a href="{% url 'update-funcionario' fun.pk %}" class="btn btn-primary">Atualizar</a>
               <a href="{% url 'delete-funcionario' fun.pk %}" class="btn btn-danger">Deletar</a>
             </td>
