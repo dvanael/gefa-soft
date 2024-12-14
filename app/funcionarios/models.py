@@ -1,5 +1,6 @@
 from django.db import models
 from app.produtos.models import Produto
+from babel.numbers import format_currency
 
 
 class Funcionario(models.Model):
@@ -50,4 +51,5 @@ class Producao(models.Model):
 
     @property
     def saldo(self):
-        return self.quantidade * self.produto.preco
+        saldo = self.quantidade * self.produto.preco
+        return format_currency(saldo, "BRL", locale="pt_BR")
