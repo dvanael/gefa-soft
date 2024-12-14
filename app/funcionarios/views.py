@@ -68,7 +68,7 @@ def update_producao(request, pk, producao_pk):
     template = "funcionarios/producao/update.html"
     context = {}
 
-    producao = get_object_or_404(Producao, producao_pk)
+    producao = get_object_or_404(Producao, pk=producao_pk)
     context["producao"] = producao
 
     funcionario = get_object_or_404(Funcionario, pk=pk)
