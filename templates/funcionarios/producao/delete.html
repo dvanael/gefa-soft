@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <h1>Deletar Produção de {{ funcionario.nome }}?</h1>
+        <p>Produto {{producao.produto.nome}}</p>
+        <p>Saldo <strong>R${{producao.saldo}}</strong></p>
+        <p>Quantidade {{producao.quantidade}} ({{prod.produto.unidade}})</p>
+        <p>Dia da Produção {{producao.quantidade}} ({{prod.produto.unidade}})</p>
+
+        <h2>Tem certeza que deseja deletar?</h2>
+        <i>*Essa ação é inreversivel.</i>
+        <form action="{% url 'delete-producao' producao.pk %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Deletar</button>
+            <a href="{% url 'list-producao' funcionario.pk %}" class="btn btn-primary">Cancelar</a>
+        </form>
+    </div>
+{% endblock content %}

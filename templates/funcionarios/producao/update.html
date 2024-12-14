@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <h1>Atualizar Produção de Funcionáro {{ funcionario.nome }}</h1>
+        <p>Saldo <strong>R${{producao.saldo}}</strong></p>
+
+        <form action="{% url 'update-producao' producao.pk %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Atualizar</button>
+            <a href="{% url 'list-producao' funcionario.pk %}" class="btn btn-danger">Cancelar</a>
+        </form>
+    </div>
+{% endblock content %}
