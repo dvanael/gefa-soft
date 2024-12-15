@@ -5,10 +5,10 @@ from django.conf import settings
 
 urlpatterns = [
     path("", include("app.users.urls")),
-    # path("", include("app.produtos.urls")),
+    path("produtos/", include("app.produtos.urls")),
     path("despesas/", include("app.despesas.urls")),
-    path("", include("app.funcionarios.urls")),
-    path("", include("app.insumos.urls")),
+    path("funcionarios/", include("app.funcionarios.urls")),
+    path("insumos/", include("app.insumos.urls")),
 ]
 
 if settings.DEBUG:
