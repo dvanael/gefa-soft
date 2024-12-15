@@ -3,11 +3,26 @@ from django.views.generic import ListView, DeleteView, UpdateView, CreateView, D
 from django.urls import reverse_lazy
 from app.insumos.models import Insumo
 from app.insumos.forms import InsumoForm
+from babel.numbers import format_currency
 
 class InsumoListView(ListView):
     model = Insumo
     template_name = 'insumos/list.html'
-    context_object_name = 'insumos'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        insumos = Insumo.objects.all()
+        insumos_formatados = []
+
+        # Formata insumos
+        for insumo in insumos:
+            insumos_formatados.append({
+                'pk': insumo.pk,
+                'tipo': insumo.tipo,
+                'preco': format_currency(insumo.preco, currency='BRL', locale='pt_BR')
+            })
+        context['insumos'] = insumos_formatados
+        return context
     
 class InsumoCreateView(CreateView):
     model = Insumo
