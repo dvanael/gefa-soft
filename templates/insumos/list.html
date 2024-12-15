@@ -1,36 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  {% comment %} <div class="container">
-    <div>
-      <a href="{% url 'create-insumo' %}" class="btn btn-primary">Cadastrar insumo</a>
-    </div>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Insumo</th>
-          <th scope="col">Preço unitário</th>
-          <th scope="col">Opções</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for insumo in insumos %}
-          <tr>
-            <th>{{ insumo.pk }}</th>
-            <td>{{ insumo.tipo }}</td>
-            <td>{{ insumo.preco }}</td>
-            <td>
-              <a href="{% url 'update-insumo' insumo.pk %}">Atualizar</a>
-              <a href="{% url 'delete-insumo' insumo.pk %}">Deletar</a>
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div> {% endcomment %}
-
-
   <div class="container">
     <div class="row">
       <div class="card">
@@ -44,39 +14,8 @@
           </form>
 
           <div class="tabela">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Insumo</th>
-                  <th scope="col">Preço unitário</th>
-                  <th scope="col">Opções</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% if insumos %}
-                  {% for insumo in insumos %}
-                    <tr>
-                      <th>{{ insumo.pk }}</th>
-                      <td>{{ insumo.tipo }}</td>
-                      <td>{{ insumo.preco }}</td>
-                      <td>
-                        <a href="{% url 'update-insumo' insumo.pk %}" class='btn btn-sm btn-warning'>Atualizar</a>
-                        <a href="{% url 'delete-insumo' insumo.pk %}" class="btn btn-sm btn-danger">Deletar</a>
-                      </td>
-                    </tr>
-                  {% endfor %}
-                  {% else %}
-                  <tr>
-                      <td colspan="4" class="text-center">Nenhum insumo encontrado</td>
-                  </tr>
-                
-                {% endif %}
-              </tbody>
-            </table>
+           {% include "partials/insumos/list.html" %}
           </div>
-        
-
         </div>
       </div>
     </div>

@@ -1,0 +1,32 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Insumo</th>
+        <th scope="col">Quantidade Comprada</th>
+        <th scope="col">Total R$</th>
+        <th scope="col">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% if gastos_insumo %}
+            {% for gasto in gastos_insumo %}
+                <tr>
+                <th>{{ gasto.pk }}</th>
+                <td>{{ gasto.insumo.tipo }} -  R$ {{ gasto.insumo.preco }}</td>
+                <td>{{ gasto.quantidade }}</td>
+                <td>{{ gasto.total }}</td>
+                <td>
+                    <a class="btn btn-warning btn-sm" href="{% url 'update-gasto-insumo' gasto.pk %}">Atualizar</a>
+                    <a class="btn btn-danger btn-sm" href="{% url 'delete-gasto-insumo' gasto.pk %}">Deletar</a>
+                </td>
+                </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="5" class="text-center">Nenhum custo foi registrado..</td>
+            </tr>
+        {% endif %}
+      
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Produto</th>
+        <th scope="col">Quantidade</th>
+        <th scope="col">Data</th>
+        <th scope="col">Saldo (R$)</th>
+        <th scope="col">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% if producoes %}
+            {% for prod in producoes %}
+                <tr>
+                <th>{{ prod.produto.nome }} ({{ prod.produto.unidade }})</th>
+                <td>{{ prod.quantidade }} ({{ prod.produto.unidade }})</td>
+                <td>{{ prod.data|date:"SHORT_DATE_FORMAT" }}</td>
+                <td>{{ prod.saldo }}</td>
+                <td>
+                    <a href="{% url 'update-producao' funcionario.pk prod.pk %}" class="btn btn-secondary">Atualizar</a>
+                    <a href="{% url 'delete-producao' funcionario.pk prod.pk %}" class="btn btn-danger">Deletar</a>
+                </td>
+                </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="5" class="text-center">Nenhuma produção foi registrada..</td>
+            </tr>
+        
+        {% endif %}
+    </tbody>
+</table>

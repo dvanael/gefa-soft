@@ -78,6 +78,7 @@ a {
       color: var(--white-color);
     }
   }
+
   
   .sidebar-link[data-bs-toggle="collapse"]::after {
     border: solid;

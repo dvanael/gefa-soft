@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="container">
-        <h1>Você quer deletar o insumo {{ object }}?</h1>
-        <form action="{% url 'delete-insumo' object.pk %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-danger">Deletar</button>
-            <a href="{% url 'list-insumos' %}" class="btn btn-primary">Cancelar</a>
-        </form>
+        <div class="card">
+            <div class="card-body">
+                <h1 class="h2">Deseja deletar o insumo: {{ object }}?</h1>
+                <form action="{% url 'delete-insumo' object.pk %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Deletar</button>
+                    <a href="{% url 'list-insumos' %}" class="btn btn-primary">Cancelar</a>
+                </form>
+
+            </div>
+        </div>
+        
     </div>
 {% endblock content %}

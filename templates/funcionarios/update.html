@@ -2,12 +2,17 @@
 {% block title %}Funcionários{% endblock title %}
 {% block content %}
     <div class="container">
-        <h1>Atualizar dados do funcionário {{ object }}</h1>
-        <form action="{% url 'update-funcionario' object.pk %}" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-success">Atualizar</button>
-            <a href="{% url 'list-funcionarios' %}" class="btn btn-danger">Cancelar</a>
-        </form>
+        <div class="card">
+            <div class="card-body">
+                <h1 class="h2">Atualizar dados do funcionário: {{ object }}</h1>
+                <form action="{% url 'update-funcionario' object.pk %}" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-success">Atualizar</button>
+                    <a href="{% url 'list-funcionarios' %}" class="btn btn-danger">Cancelar</a>
+                </form>
+            </div>
+        </div>
+        
     </div>
 {% endblock content %}
