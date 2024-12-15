@@ -6,8 +6,8 @@
     <div class="main">
       <nav class="navbar fixed-top navbar-expand navbar-bg-color mb-3 mobile-display">
         <div class="container container-fluid">
-          <a class="navbar-brand poppins-bold text-success" href="#">
-            <img class="navbar-logo" src="#" alt="#">
+          <a class="navbar-brand poppins-bold" href="#">
+            {% comment %} <img class="navbar-logo" src="#" alt="#"> {% endcomment %}
             GEFASOFT
           </a>
           <button class="btn btn-rounded btn-outline-success" type="button"><span class="navbar-toggler-icon"></span></button>
@@ -16,8 +16,8 @@
 
       <nav class="navbar navbar-expand-lg navbar-bg-color mb-3 desktop-display">
         <div class="container container-fluid">
-          <a class="navbar-brand poppins-bold text-success" href="{% url 'index' %}">
-            <img class="navbar-logo" src="#" alt="#">
+          <a class="navbar-brand poppins-bold " href="{% url 'index' %}">
+            {% comment %} <img class="navbar-logo" src="#" alt="#"> {% endcomment %}
               GEFASOFT
           </a>
 
@@ -26,7 +26,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0 justify-content-end align-items-center flex-grow-1">
               <li class="nav-item mx-4">
-                <div class=" poppins-medium">Olá, <span class="fw-semibold text-success">Administrador</span></div>
+                <div class=" poppins-medium">Olá, <span class="fw-semibold">Administrador</span></div>
               </li>
               <li>
                 <form action="{% url 'logout' %}" method="post">

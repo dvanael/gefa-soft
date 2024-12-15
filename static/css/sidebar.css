@@ -1,5 +1,6 @@
 /* SIDEBAR */
 
+
 a {
     cursor: pointer;
     text-decoration: none;
@@ -66,7 +67,7 @@ a {
     transition: ease-in-out all 0.2s;
     &:hover{
       color: var(--white-color);
-      background-color: var(--gray-color);
+      background-color: var(--brown-color);
     }
   }
   
