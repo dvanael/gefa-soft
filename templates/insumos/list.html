@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div class="container">
+  {% comment %} <div class="container">
     <div>
       <a href="{% url 'create-insumo' %}" class="btn btn-primary">Cadastrar insumo</a>
     </div>
@@ -28,5 +28,57 @@
         {% endfor %}
       </tbody>
     </table>
+  </div> {% endcomment %}
+
+
+  <div class="container">
+    <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="h3">Insumos</h1>
+
+          <form class="d-flex" role="search">
+            <input class="form-control me-2 w-50" type="search" placeholder="Buscar insumo.." aria-label="Search">
+            <button class="btn btn-success" type="submit">Buscar</button>
+            <a href="{% url 'create-insumo' %}" class="btn btn-primary ms-2">Adicionar novo</a>
+          </form>
+
+          <div class="tabela">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Insumo</th>
+                  <th scope="col">Preço unitário</th>
+                  <th scope="col">Opções</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% if insumos %}
+                  {% for insumo in insumos %}
+                    <tr>
+                      <th>{{ insumo.pk }}</th>
+                      <td>{{ insumo.tipo }}</td>
+                      <td>{{ insumo.preco }}</td>
+                      <td>
+                        <a href="{% url 'update-insumo' insumo.pk %}" class='btn btn-sm btn-warning'>Atualizar</a>
+                        <a href="{% url 'delete-insumo' insumo.pk %}" class="btn btn-sm btn-danger">Deletar</a>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                  {% else %}
+                  <tr>
+                      <td colspan="4" class="text-center">Nenhum insumo encontrado</td>
+                  </tr>
+                
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
+        
+
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock %}
