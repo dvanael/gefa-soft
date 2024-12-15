@@ -17,9 +17,18 @@
 .card-body{
   margin-left: 1em;
   margin-right: 2em;
+ 
 }
 
+.card{
+  margin-top: 1rem;
+  margin-bottom: 1em;
+}
 
+.tabela{
+  margin-top: 1em;
+
+}
 
 * {
   margin: 0;
@@ -49,7 +58,9 @@ table{
   th, td{
     vertical-align: middle;
   }
+
 }
+
 legend{
   font-size: medium !important;
 }
