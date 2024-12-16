@@ -3,6 +3,7 @@ from app.vendas.views import ( VendaCreateView,
                               VendaDeleteView, 
                               VendaUpdateView, 
                               VendaListView, 
+                              create_venda,
                               list_produto_venda, 
                               update_produto_venda, 
                               delete_produto_venda,
@@ -11,7 +12,7 @@ from app.vendas.views import ( VendaCreateView,
 urlpatterns = [
   # VENDAS
   path('', VendaListView.as_view(), name='list-vendas'),
-  path('cadastrar/', VendaCreateView.as_view(), name='create-venda'),
+  path('cadastrar/', create_venda, name='create-venda'),
   path('<int:pk>/deletar', VendaDeleteView.as_view(), name='delete-venda'),
   path('<int:pk>/atualizar', VendaUpdateView.as_view(), name='update-venda'),
   

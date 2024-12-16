@@ -1,6 +1,6 @@
 from django.db import models
 from app.produtos.models import Produto
-# Create your models here.
+from babel.numbers import format_currency
 
 class Venda(models.Model):
     data = models.DateField(verbose_name='Data da Venda')
@@ -21,7 +21,7 @@ class Venda(models.Model):
         valor = 0
         for produto_vendido in self.produtos_vendidos:
             valor += produto_vendido.quantidade * produto_vendido.produto.preco
-        return valor
+        return format_currency(valor, "BRL", locale="pt_BR")
 
 
 class ProdutoVenda(models.Model):
@@ -32,6 +32,11 @@ class ProdutoVenda(models.Model):
     class Meta:
         verbose_name = 'Produto Vendido'
         verbose_name_plural = 'Produtos Vendidos'
+
+    @property
+    def preco(self):
+        preco = self.quantidade * self.produto.preco
+        return format_currency(preco, "BRL", locale="pt_BR")
 
     def __str__(self):
         return f"{self.produto.nome} - {self.quantidade} {self.produto.unidade}"
