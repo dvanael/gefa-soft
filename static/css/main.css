@@ -11,6 +11,11 @@
   --content-border-radius: 3px;
 }
 
+#login{
+  text-align: center;
+  margin-top: 10rem;
+}
+
 .header-card{
   margin-bottom: 1rem;
 }
