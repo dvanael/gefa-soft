@@ -6,7 +6,7 @@
     <div class="card">
       <div class="card-body">
 
-        <h1>Produções de {{ funcionario.nome }}</h1>
+        <h1 class="h2">Produções de {{ funcionario.nome }}</h1>
         <div>
           <a href="{% url 'create-producao' funcionario.pk %}" class="btn btn-success">Registrar produção</a>
           <a href="{% url 'list-funcionarios' %}" class="btn btn-primary">Ver Lista de Funcionários</a>

@@ -2,14 +2,18 @@
 {% block title %}Produção{% endblock title %}
 {% block content %}
     <div class="container">
-        <h1>Atualizar Produção de Funcionáro {{ funcionario.nome }}</h1>
-        <p>Saldo <strong>{{producao.saldo}}</strong></p>
+        <div class="card">
+            <div class="card-body">
+                <h1 class="h2">Atualizar Produção de Funcionáro {{ funcionario.nome }}</h1>
+                <p>Saldo <strong>{{producao.saldo}}</strong></p>
 
-        <form action="{% url 'update-producao' funcionario.pk producao.pk %}" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-success">Atualizar</button>
-            <a href="{% url 'list-producao' funcionario.pk %}" class="btn btn-danger">Cancelar</a>
-        </form>
+                <form action="{% url 'update-producao' funcionario.pk producao.pk %}" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-success">Atualizar</button>
+                    <a href="{% url 'list-producao' funcionario.pk %}" class="btn btn-danger">Cancelar</a>
+                </form>
+            </div>
+        </div>
     </div>
 {% endblock content %}
