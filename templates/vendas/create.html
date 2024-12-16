@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Vendas{% endblock title %}
+{% block content %}
+    <div class="container">
+        <h1>Cadastrar venda</h1>
+        <form action="{% url 'create-venda' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Cadastrar</button>
+            <a href="{% url 'list-funcionarios' %}" class="btn btn-danger">Cancelar</a>
+        </form>
+    </div>
+{% endblock content %}

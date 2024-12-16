@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Produção{% endblock title %}
+{% block content %}
+    <div class="container">
+        <h1>Deletar produto da venda {{ venda.data }}?</h1>
+        <p>Produto <strong>{{produto_venda.produto.nome}}</strong></p>
+        <p>Saldo <strong>{{produto_venda.quantidade}}</strong></p>
+
+        <h2>Tem certeza que deseja deletar?</h2>
+        <i>*Essa ação é inreversivel.</i>
+        <form action="{% url 'delete-produto-venda' venda.pk produto_venda.pk %}" method="post">
+            {% csrf_token %}
+            <a href="{% url 'list-produto-venda' venda.pk %}" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-danger">Deletar</button>
+        </form>
+    </div>
+{% endblock content %}

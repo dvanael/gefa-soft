@@ -35,3 +35,4 @@ class ProdutoVenda(models.Model):
 
     def __str__(self):
         return f"{self.produto.nome} - {self.quantidade} {self.produto.unidade}"
+    
