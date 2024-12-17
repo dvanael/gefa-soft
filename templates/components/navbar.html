@@ -15,6 +15,9 @@
     <li>
       <a href="{% url 'list-funcionarios' %}">Funcionários</a>
     </li>
+    <li>
+      <a href="{% url 'list-vendas' %}">Vendas</a>
+    </li>
     {% if request.user.is_authenticated %}
       <li>
         <form action="{% url 'logout' %}" method="post">

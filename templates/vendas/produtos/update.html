@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Atualizar produto da venda{% endblock title %}
+{% block content %}
+    <div class="container">
+        <h1>Atualizar produto da venda {{ venda.data }}</h1>
+        <p>Saldo <strong>{{ produto_venda.quantidade }}</strong></p>
+
+        <form action="{% url 'update-produto-venda' venda.pk produto_venda.pk %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Atualizar</button>
+            <a href="{% url 'list-produto-venda' venda.pk %}" class="btn btn-danger">Cancelar</a>
+        </form>
+    </div>
+{% endblock content %}

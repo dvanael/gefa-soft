@@ -27,7 +27,11 @@
   <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
   <script src="{% static 'js/jquery.mask.js' %}"></script>
   <script src="{% static 'js/custom.mask.js' %}"></script>
+
   <script src="{% static 'js/sidebar.js' %}"></script>
-  <script src="{% static "js/bar_chart.js" %}"></script>
+  <script src="{% static 'js/bar_chart.js' %}"></script>
+
+  {% block scripts %}
+  {% endblock scripts %}
 </body>
 </html>

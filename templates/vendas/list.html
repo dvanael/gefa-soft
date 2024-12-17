@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Funcionários{% endblock title %}
+{% block content %}
+  <div class="container">
+    <div>
+      <a href="{% url 'create-venda' %}" class="btn btn-primary">Cadastrar venda</a>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Data</th>
+          <th scope="col">Valor (R$)</th>
+          <th scope="col">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ven in vendas %}
+          <tr>
+            <th>{{ ven.pk }}</th>
+            <td>{{ ven.data }}</td>
+            <td>{{ ven.valor }}</td>
+            <td>
+              <a href="{% url 'list-produto-venda' ven.pk %}" class="btn btn-success">Ver produtos da venda</a>
+              <a href="{% url 'update-venda' ven.pk %}" class="btn btn-primary">Atualizar</a>
+              <a href="{% url 'delete-venda' ven.pk %}" class="btn btn-danger">Deletar</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

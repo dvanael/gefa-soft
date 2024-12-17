@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Vendas{% endblock title %}
+{% block content %}
+<div class="container">
+    <h1>Cadastrar venda</h1>
+    <form action="{% url 'create-venda' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {% if form_produto_venda %}
+        {{ form_produto_venda.management_form }}
+        <h4 class="poppins-bold">PRODUTOS DA VENDA</h4>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>PRODUTO</th>
+                        <th>QUANTIDADE</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    {% for form in form_produto_venda %}
+                    <tr class='inlineform' id="form-row-{{ form.prefix }}">
+                        <td>{{form.produto}}</td>
+                        <td>{{form.quantidade}}</td>
+                        <td></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+        <a href="{% url 'list-vendas' %}" class="btn btn-danger">Cancelar</a>
+    </form>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="{% static 'js/jquery.formset.js' %}"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $('.inlineform').formset({
+            prefix: '{{ form_produto_venda.prefix }}',
+            addText: '<button type="submit" class="btn btn-success btn-gap">ADICIONAR PRODUTO</button>',
+            deleteText: '<button type="submit" class="btn btn-danger btn-sm ms-2">DELETAR PRODUTO</button>',
+        });
+    })
+</script>
+{% endblock scripts %}
