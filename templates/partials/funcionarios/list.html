@@ -1,0 +1,33 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Funcionário</th>
+        <th scope="col">Função</th>
+        <th scope="col">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% if funcionarios %}
+            {% for fun in funcionarios %}
+                <tr>
+                <th>{{ fun.pk }}</th>
+                <td>{{ fun.nome }}</td>
+                <td>{{ fun.funcao }}</td>
+                <td>
+                    <a href="{% url 'create-producao' fun.pk %}" class="btn btn-success btn-sm">Registrar produção</a>
+                    <a href="{% url 'list-producao' fun.pk %}" class="btn btn-secondary btn-sm">Ver produções</a>
+                    <a href="{% url 'update-funcionario' fun.pk %}" class="btn btn-warning btn-sm">Atualizar</a>
+                    <a href="{% url 'delete-funcionario' fun.pk %}" class="btn btn-danger btn-sm">Deletar</a>
+                </td>
+                </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="4" class="text-center">Nenhum funcionário encontrado..</td>
+            </tr>
+        
+        {% endif %}
+    </tbody>
+</table>

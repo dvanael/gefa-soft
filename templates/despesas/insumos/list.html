@@ -1,34 +1,26 @@
 {% extends 'base.html' %}
-{% block title %}Gasto de Insumos{% endblock  %}
+{% block title %}Custos de Insumos{% endblock  %}
 {% block content %}
   <div class="container">
-    <div>
-      <a href="{% url 'create-gasto-insumo' %}" class="btn btn-primary">Cadastrar Gasto de Insumo</a>
+    <div class="card">
+      <div class="card-body">
+
+        
+        <h1 class="h2">Custos com insumos</h1>
+        
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 w-50" type="search" placeholder="Buscar custo.." aria-label="Search">
+          <button class="btn btn-success" type="submit">Buscar</button>
+          <a href="{% url 'create-gasto-insumo' %}" class="btn btn-warning ms-2">Registrar custo</a>
+        </form>
+       
+        <div class="tabela">
+          {% include "../../partials/despesas/insumos/list.html" %}
+        </div>
+
+      </div>
     </div>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Insumo</th>
-          <th scope="col">Quantidade Comprada</th>
-          <th scope="col">Total R$</th>
-          <th scope="col">Opções</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for gasto in gastos_insumo %}
-          <tr>
-            <th>{{ gasto.pk }}</th>
-            <td>{{ gasto.insumo.tipo }} -  R$ {{ gasto.insumo.preco }}</td>
-            <td>{{ gasto.quantidade }}</td>
-            <td>{{ gasto.total }}</td>
-            <td>
-              <a class="btn btn-primary" href="{% url 'update-gasto-insumo' gasto.pk %}">Atualizar</a>
-              <a class="btn btn-warning" href="{% url 'delete-gasto-insumo' gasto.pk %}">Deletar</a>
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    
   </div>
 {% endblock %}

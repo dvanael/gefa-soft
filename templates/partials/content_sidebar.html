@@ -1,0 +1,46 @@
+
+<aside id="sidebar" class="collapsed">
+    <div0 class="h-100">
+        <div class="sidebar-margin"/>
+        <ul class="sidebar-nav">
+            <div class="d-flex justify-content-center">
+                <hr class="w-75">
+            </div>
+            <a href="{% url 'index' %}" class="sidebar-link poppins-medium">
+                <li class="sidebar-item">Início</li>
+            </a>
+
+            <a href="{% url "list-insumos" %}" class="sidebar-link poppins-medium">
+                <li class="sidebar-item ">Insumos</li>
+            </a>
+
+            <a href="" class="sidebar-link poppins-medium ">
+                <li class="sidebar-item">Vendas</li>
+            </a>
+
+            <a href="{% url "list-produtos" %}" class="sidebar-link poppins-medium">
+                <li class="sidebar-item ">Produtos</li>
+            </a>
+
+            <a href="{% url "list-gasto-insumo" %}" class="sidebar-link poppins-medium">
+                <li class="sidebar-item ">Custos</li>
+            </a>
+
+            <a href="{% url "list-funcionarios" %}" class="sidebar-link poppins-medium">
+                <li class="sidebar-item ">Funcionários</li>
+            </a>
+
+            <div class="d-flex justify-content-center">
+                <hr class="w-75">
+            </div>
+
+            <li class="sidebar-item mobile-display">
+                <div class="poppins-medium">Olá, <span class="fw-semibold ">Administrador</span></div> 
+            </li>
+
+            <a href="" class="sidebar-link poppins-medium">
+                <li class="sidebar-item mobile-display">Sair</li>
+            </a>
+        </ul>
+    </div>
+</aside>

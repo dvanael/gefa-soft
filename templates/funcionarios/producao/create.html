@@ -2,12 +2,18 @@
 {% block title %}Produção{% endblock title %}
 {% block content %}
     <div class="container">
-        <h1>Cadastrar Produção do Funcionáro {{ funcionario.nome }}</h1>
-        <form action="{% url 'create-producao' funcionario.pk %}" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-success">Cadastrar</button>
-            <a href="{% url 'list-producao' funcionario.pk %}" class="btn btn-danger">Cancelar</a>
-        </form>
+        <div class="card">
+            <div class="card-body">
+                <h1 class="h2">Cadastrar produção do funcionáro: {{ funcionario.nome }}</h1>
+                <form action="{% url 'create-producao' funcionario.pk %}" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                    <a href="{% url 'list-producao' funcionario.pk %}" class="btn btn-danger">Cancelar</a>
+                </form>
+
+            </div>
+        </div>
+        
     </div>
 {% endblock content %}
