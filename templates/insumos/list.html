@@ -2,31 +2,22 @@
 
 {% block content %}
   <div class="container">
-    <div>
-      <a href="{% url 'create-insumo' %}" class="btn btn-primary">Cadastrar insumo</a>
+    <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="h3">Insumos</h1>
+
+          <form class="d-flex" role="search">
+            <input class="form-control me-2 w-50" type="search" placeholder="Buscar insumo.." aria-label="Search">
+            <button class="btn btn-success" type="submit">Buscar</button>
+            <a href="{% url 'create-insumo' %}" class="btn btn-primary ms-2">Adicionar novo</a>
+          </form>
+
+          <div class="tabela">
+           {% include "partials/insumos/list.html" %}
+          </div>
+        </div>
+      </div>
     </div>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Insumo</th>
-          <th scope="col">Preço unitário</th>
-          <th scope="col">Opções</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for insumo in insumos %}
-          <tr>
-            <th>{{ insumo.pk }}</th>
-            <td>{{ insumo.tipo }}</td>
-            <td>{{ insumo.preco }}</td>
-            <td>
-              <a href="{% url 'update-insumo' insumo.pk %}">Atualizar</a>
-              <a href="{% url 'delete-insumo' insumo.pk %}">Deletar</a>
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
   </div>
 {% endblock %}

@@ -2,29 +2,23 @@
 {% block title %}Produtos{% endblock title %}
 {% block content %}
   <div class="container">
-    <div>
-      <a href="{% url 'create-produto' %}" class="btn btn-primary">Cadastrar Produto</a>
+
+    <div class="card">
+      <div class="card-body">
+        <h1 class="h2">Produtos</h1>
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 w-50" type="search" placeholder="Buscar produto.." aria-label="Search">
+          <button class="btn btn-success" type="submit">Buscar</button>
+          <a href="{% url 'create-produto' %}" class="btn btn-primary ms-2">Adicionar novo</a>
+        </form>
+      
+        <div class="tabela">
+          {% include "../partials/produtos/list.html" %}
+        </div>
+
+      </div>
     </div>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Nome</th>
-          <th scope="col">Preço (R$)</th>
-          <th scope="col">Opções</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for produto in produtos %}
-          <tr>
-            <td>{{ produto.nome }}</td>
-            <td>{{ produto.preco }}</td>
-            <td>
-              <a href="{% url 'update-produto' produto.pk %}" class="btn btn-primary">Atualizar</a>
-              <a href="{% url 'delete-produto' produto.pk %}" class="btn btn-danger">Deletar</a>
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    
   </div>
 {% endblock %}

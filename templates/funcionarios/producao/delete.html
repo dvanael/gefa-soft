@@ -2,18 +2,22 @@
 {% block title %}Produção{% endblock title %}
 {% block content %}
     <div class="container">
-        <h1>Deletar Produção de {{ funcionario.nome }}?</h1>
-        <p>Produto <strong>{{producao.produto.nome}}</strong></p>
-        <p>Saldo <strong>{{producao.saldo}}</strong></p>
-        <p>Quantidade <strong>{{producao.quantidade}} ({{producao.produto.unidade}})</strong></p>
-        <p>Dia da Produção <strong>{{producao.data|date:"SHORT_DATE_FORMAT"}}</strong></p>
+        <div class='card'>
+            <div class='card-body'>
+                <h1>Deletar Produção de {{ funcionario.nome }}?</h1>
+                <p>Produto <strong>{{producao.produto.nome}}</strong></p>
+                <p>Saldo <strong>{{producao.saldo}}</strong></p>
+                <p>Quantidade <strong>{{producao.quantidade}} ({{producao.produto.unidade}})</strong></p>
+                <p>Dia da Produção <strong>{{producao.data|date:"SHORT_DATE_FORMAT"}}</strong></p>
 
-        <h2>Tem certeza que deseja deletar?</h2>
-        <i>*Essa ação é inreversivel.</i>
-        <form action="{% url 'delete-producao' funcionario.pk producao.pk %}" method="post">
-            {% csrf_token %}
-            <a href="{% url 'list-producao' funcionario.pk %}" class="btn btn-secondary">Cancelar</a>
-            <button type="submit" class="btn btn-danger">Deletar</button>
-        </form>
+                <h2>Tem certeza que deseja deletar?</h2>
+                <i>*Essa ação é inreversivel.</i>
+                <form action="{% url 'delete-producao' funcionario.pk producao.pk %}" method="post">
+                    {% csrf_token %}
+                    <a href="{% url 'list-producao' funcionario.pk %}" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-danger">Deletar</button>
+                </form>
+            </div>
+        </div>
     </div>
 {% endblock content %}

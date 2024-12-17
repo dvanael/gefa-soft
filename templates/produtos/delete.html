@@ -2,11 +2,16 @@
 {% block title %}Produtos{% endblock title %}
 {% block content %}
     <div class="container">
-        <h1>Você quer deletar o produto {{ produto.nome }}?</h1>
-        <form action="{% url 'delete-produto' produto.pk %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-danger">Deletar</button>
-            <a href="{% url 'list-produtos' %}" class="btn btn-primary">Cancelar</a>
-        </form>
+        <div class="card">
+            <div class="card-body">
+                <h1 class=h2>Deseja deletar o produto: {{ produto.nome }}?</h1>
+                <form action="{% url 'delete-produto' produto.pk %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Deletar</button>
+                    <a href="{% url 'list-produtos' %}" class="btn btn-primary">Cancelar</a>
+                </form>
+            </div>
+        </div>
+        
     </div>
 {% endblock content %}

@@ -1,34 +1,31 @@
 {% extends 'base.html' %}
 {% block title %}Funcionários{% endblock title %}
 {% block content %}
-  <div class="container">
+  {% comment %} <div class="container">
     <div>
       <a href="{% url 'create-funcionario' %}" class="btn btn-primary">Cadastrar funcionário</a>
     </div>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Funcionário</th>
-          <th scope="col">Função</th>
-          <th scope="col">Opções</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for fun in funcionarios %}
-          <tr>
-            <th>{{ fun.pk }}</th>
-            <td>{{ fun.nome }}</td>
-            <td>{{ fun.funcao }}</td>
-            <td>
-              <a href="{% url 'list-producao' fun.pk %}" class="btn btn-success">Ver Produções</a>
-              <a href="{% url 'create-producao' fun.pk %}" class="btn btn-success">Cadastrar Produção</a>
-              <a href="{% url 'update-funcionario' fun.pk %}" class="btn btn-primary">Atualizar</a>
-              <a href="{% url 'delete-funcionario' fun.pk %}" class="btn btn-danger">Deletar</a>
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    
+  </div> {% endcomment %}
+
+
+  <div class="container">
+    <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="h3">Funcionários</h1>
+
+          <form class="d-flex" role="search">
+            <input class="form-control me-2 w-50" type="search" placeholder="Buscar funcionário.." aria-label="Search">
+            <button class="btn btn-success" type="submit">Buscar</button>
+            <a href="{% url 'create-funcionario' %}" class="btn btn-primary ms-2">Adicionar novo</a>
+          </form>
+
+          <div class="tabela">
+           {% include "partials/funcionarios/list.html" %}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock %}

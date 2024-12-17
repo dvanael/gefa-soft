@@ -1,0 +1,30 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Insumo</th>
+        <th scope="col">Preço unitário</th>
+        <th scope="col">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if insumos %}
+        {% for insumo in insumos %}
+          <tr>
+            <th>{{ insumo.pk }}</th>
+            <td>{{ insumo.tipo }}</td>
+            <td>{{ insumo.preco }}</td>
+            <td>
+              <a href="{% url 'update-insumo' insumo.pk %}" class='btn btn-sm btn-warning'>Atualizar</a>
+              <a href="{% url 'delete-insumo' insumo.pk %}" class="btn btn-sm btn-danger">Deletar</a>
+            </td>
+          </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="4" class="text-center">Nenhum insumo encontrado..</td>
+        </tr>
+      
+      {% endif %}
+    </tbody>
+</table>

@@ -1,7 +1,133 @@
 {% extends "base.html" %}
 {% block title %}Início{% endblock title %}
 
+
 {% block content %}
-<h1>GEFA SOFT</h1>
-<h2>Seja bem-vindo!</h2>
+
+<div class="container">
+    <section class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class= 'card-body'>
+                    <h2 class='h3 header-card'>Informações gerais</h2>
+
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="d-flex flex-column align-items-center me-3">
+                            <p class="mb-1">Produção esperada</p>
+                            <p >700/Kg</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-center ms-3">
+                            <p class="mb-1">Saldo de produção</p>
+                            <p >600/Kg</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="d-flex flex-column align-items-center me-3">
+                            <p class="mb-1">Vendas esperadas</p>
+                            <p>R$ 600,00</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-center ms-3">
+                            <p class="mb-1">Vendas registradas</p>
+                            <p>R$ 600,00</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="d-flex flex-column align-items-center me-3">
+                            <p class="mb-1">Lucro esperado</p>
+                            <p>R$ 150,00</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-center ms-3">
+                            <p class="mb-1">Lucro total</p>
+                            <p>R$ 100,00</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="d-flex flex-column align-items-center me-3">
+                            <p class="mb-1">Despesa esperada</p>
+                            <p>R$ 150,00</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-center ms-3">
+                            <p class="mb-1">Despesa total</p>
+                            <p>R$ 150,00</p>
+                        </div>
+                    </div>
+
+                </div>  
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class= 'card-body'>
+                    <h2 class='h3 header-card'>Custos com insumos</h2>
+
+                    <div class="d-flex justify-content-between align-items-start">
+                        <a href="" class="btn btn-primary">Adicionar novo</a>
+                        <a href="" class="btn btn-warning">Quitar dívida</a>
+                        <div class="text-center ms-3">
+                            <p class="mb-1">Custos contabilizados</p>
+                            <p>R$ 140,00</p>
+                        </div>  
+                    </div>
+
+                    <canvas id="horizontalBarChart"></canvas> <!-- js/bar_chart.js não sei se dá pra reproveitar pra fazer com os dados reais, mas ele ta ai-->
+                </div>  
+            </div>
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class='h3 header-card'>Painel de funcionários</h2>
+
+                    <div class="">
+                        <a href="" class="btn btn-primary">Adicionar novo</a>
+                        <a href="" class="btn btn-warning">Registrar produção</a>
+                    </div>
+
+                    <div class="tabela">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                  <th scope="col">Nome</th>
+                                  <th scope="col">Função</th>
+                                  <th scope="col">Total a pagar</th>
+                                  <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row">Arnaldo</th>
+                                  <td>Gomeiro(a)</td>
+                                  <td>R$ 45,00</td>
+                                  <td><a href="">Ver detalhes</a></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Joana</th>
+                                    <td>Forneiro(a)</td>
+                                    <td>R$ 24,00</td>
+                                    <td><a href="">Ver detalhes</a></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Francisca</th>
+                                    <td>Rapadeira(a)</td>
+                                    <td>R$ 70,00</td>
+                                    <td><a href="">Ver detalhes</a></td>
+                                </tr>
+                            <tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 {% endblock content %}
