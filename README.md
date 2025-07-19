@@ -1,5 +1,20 @@
-# GEFA SOFT
+
+<h1 align="center" style="font-weight: bold;">
+ GEFA SOFT
+</h1>
+
+<p align="center">
 Um Sistema Web para Gerenciamento de Casa de Farinha.
+</p>
+
+<p align="center">
+  <a href="#sobre">Sobre</a> •
+  <a href="#apresentação">Apresentação</a> •
+  <a href="#instalação">Instalação</a> •
+  <a href="#colaboradores">Colaboradores</a>
+</p>
+
+---
 
 ## Sobre
 O **GEFA SOFT** visa facilitar a vida dos **gerentes de Casas de Farinha**. Com ele, você pode gerenciar as contas da empresa.
