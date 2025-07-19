@@ -17,6 +17,9 @@ Gravações e telas do sistema funcionando.
 
 <img width="1894" height="930" alt="image" src="https://github.com/user-attachments/assets/841a8e0e-fb7b-4636-856d-02a111e0ae1e" />
 
+<img width="1896" height="937" alt="image" src="https://github.com/user-attachments/assets/ac64ef10-7989-468f-ab69-c6fb963a7288" />
+
+
 ## Instalação
 
 ### Configurando o ambiente
