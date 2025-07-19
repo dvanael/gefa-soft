@@ -1,17 +1,30 @@
 # GEFA SOFT
-Sistema Web para Gerenciamento de Casa de Farinha
+Um Sistema Web para Gerenciamento de Casa de Farinha.
 
 ## Sobre
-O GEFA SOFT visa facilitar a vida dos gerentes de Casas de Farinha. Com ele, você pode gerenciar as contas da empresa.
+O **GEFA SOFT** visa facilitar a vida dos **gerentes de Casas de Farinha**. Com ele, você pode gerenciar as contas da empresa.
+
+Esse sistema foi criado para a conclusão da máteria **Projeto de Desenvolvimento de Sistemas para Internet**. 
+
+Durante seu desenvolvimento, a equipe seguiu **metodologias ágeis**, combinando **Scrum** e **Kamban** para organização das tarefas e acompanhamento do desenvolvimento. Pode ser conferido no [Github Projects](https://github.com/users/dvanael/projects/3) do repositório.
+
+**Figma** foi usado para prototipação. [Confira aqui.](https://www.figma.com/proto/R1nQXjDV6O2fvNt04fQgxm/gefasoft?node-id=26-375&t=7dR4UhBlTo3wWw78-1)
+
+Para desenvolvimento do backend, foi utilizado o framework **Django**. No frontend, foi usado **HTML, CSS e Javascript** junto do framework **Bootstrap**.
+
+## Apresentação
+Gravações e telas do sistema funcionando.
+
+<img width="1894" height="930" alt="image" src="https://github.com/user-attachments/assets/841a8e0e-fb7b-4636-856d-02a111e0ae1e" />
 
 ## Instalação
 
 ### Configurando o ambiente
 
- - Clone o [repositório](https://github.com/IFRN-SPP/cooplink)
+ - Clone o [repositório](https://github.com/dvanael/gefa-soft)
 
 ```bash
-git clone https://github.com/IFRN-SPP/cooplink.git
+git clone https://github.com/dvanael/gefa-soft.git
 ```
 
 - Crie um ambiente virtual
@@ -76,7 +89,6 @@ python manage.py runserver
   - **[localhost:8000/](http://localhost:8000/)**
 
 ---
-
 
 ## Colaboradores
 
