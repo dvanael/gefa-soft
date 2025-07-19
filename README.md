@@ -27,6 +27,8 @@ Durante seu desenvolvimento, a equipe seguiu **metodologias ágeis**, combinando
 
 Para desenvolvimento do backend, foi utilizado o framework **Django**. No frontend, foi usado **HTML, CSS e Javascript** junto do framework **Bootstrap**.
 
+---
+
 ## Apresentação
 Gravações e telas do sistema funcionando.
 
@@ -34,6 +36,7 @@ Gravações e telas do sistema funcionando.
 
 <img width="1896" height="937" alt="image" src="https://github.com/user-attachments/assets/ac64ef10-7989-468f-ab69-c6fb963a7288" />
 
+---
 
 ## Instalação
 
